@@ -3,6 +3,7 @@ linux-x86_64-binaries_task:
     image: ubuntu:latest
 
   package_script:
+    - apt-get update
     - touch higan-nightly.zip
 
   matrix:
