@@ -11,7 +11,7 @@ if [[ "$GITHUB_TOKEN" == "" ]]; then
 fi
 
 echo "Uploading..."
-name="higan-$CIRRUS_RELEASE-$CIRRUS_OS.zip"
+name="higan-$CIRRUS_TAG-$CIRRUS_OS.zip"
 curl -X POST \
     --data-binary @higan-nightly.zip \
     --header "Authorization: token $GITHUB_TOKEN" \
