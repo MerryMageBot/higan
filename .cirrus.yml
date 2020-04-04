@@ -1,3 +1,6 @@
+environment:
+    GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+
 linux-x86_64-binaries_task:
     container:
         image: ubuntu:latest
@@ -22,9 +25,7 @@ linux-x86_64-binaries_task:
         - zip -r higan-nightly.zip higan-nightly
 
     upload_script:
-        environment:
-            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
-        script: ./.cirrus.upload.sh
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
@@ -53,9 +54,7 @@ freebsd-x86_64-binaries_task:
         - zip -r higan-nightly.zip higan-nightly
 
     upload_script:
-        environment:
-            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
-        script:  ./.cirrus.upload.sh
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
@@ -85,9 +84,7 @@ windows-x86_64-binaries_task:
         - zip -r higan-nightly.zip higan-nightly
 
     upload_script:
-        environment:
-            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
-        script:  ./.cirrus.upload.sh
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
@@ -111,9 +108,7 @@ macOS-x86_64-binaries_task:
         - zip -r higan-nightly.zip higan-nightly
 
     upload_script:
-        environment:
-            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
-        script:  ./.cirrus.upload.sh
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
