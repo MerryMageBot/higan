@@ -4,7 +4,7 @@ linux-x86_64-binaries_task:
 
   package_script:
     - apt-get update && apt-get -y install curl
-    - touch higan-nightly.zip
+    - echo "this is a test of the system" > higan-nightly.zip
 
   matrix:
     - only_if: $CIRRUS_RELEASE != ""
@@ -22,7 +22,7 @@ freebsd-x86_64-binaries_task:
 
   setup_script:
     - pkg install --yes curl
-    - touch higan-nightly.zip
+    - echo "this is a test of the system" > higan-nightly.zip
 
   matrix:
     - only_if: $CIRRUS_RELEASE != ""
@@ -39,7 +39,7 @@ macOS-x86_64-binaries_task:
     image: mojave-base
 
   setup_script:
-    - touch higan-nightly.zip
+    - echo "this is a test of the system" > higan-nightly.zip
 
   matrix:
     - only_if: $CIRRUS_RELEASE != ""
