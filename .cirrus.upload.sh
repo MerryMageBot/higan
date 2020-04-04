@@ -13,7 +13,7 @@ fi
 echo "Uploading..."
 name="higan-$CIRRUS_RELEASE-$CIRRUS_OS.zip"
 curl -X POST \
-    --data-binary "higan-nightly.zip" \
+    --data-binary @higan-nightly.zip \
     --header "Authorization: token $GITHUB_TOKEN" \
     --header "Content-Type: application/octet-stream" \
     "https://uploads.github.com/repos/$CIRRUS_REPO_FULL_NAME/releases/$CIRRUS_RELEASE/assets?name=$name"
