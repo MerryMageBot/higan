@@ -21,6 +21,11 @@ linux-x86_64-binaries_task:
         - cp -a GPLv3.txt higan-nightly
         - zip -r higan-nightly.zip higan-nightly
 
+    upload_script:
+        environment:
+            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+        - ./.cirrus.upload.sh
+
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
 
@@ -46,6 +51,11 @@ freebsd-x86_64-binaries_task:
         - cp -a genius/out/genius higan-nightly/genius
         - cp -a GPLv3.txt higan-nightly
         - zip -r higan-nightly.zip higan-nightly
+
+    upload_script:
+        environment:
+            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
@@ -74,6 +84,11 @@ windows-x86_64-binaries_task:
         - echo "data: ./Systems/" >> higan-nightly/paths.bml
         - zip -r higan-nightly.zip higan-nightly
 
+    upload_script:
+        environment:
+            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+        - ./.cirrus.upload.sh
+
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
 
@@ -94,6 +109,11 @@ macOS-x86_64-binaries_task:
         - cp -a icarus/Firmware higan-nightly
         - cp -a GPLv3.txt higan-nightly
         - zip -r higan-nightly.zip higan-nightly
+
+    upload_script:
+        environment:
+            GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+        - ./.cirrus.upload.sh
 
     higan-nightly_artifacts:
         path: "higan-nightly.zip"
