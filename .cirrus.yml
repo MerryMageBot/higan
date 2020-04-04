@@ -1,15 +1,16 @@
-environment:
-    GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
-
 linux-x86_64-binaries_task:
-    container:
-        image: ubuntu:latest
+  container:
+    image: ubuntu:latest
 
-    package_script:
-        - touch higan-nightly.zip
+  package_script:
+    - touch higan-nightly.zip
 
-    upload_script:
-        - ./.cirrus.upload.sh
+  matrix:
+    - only_if: $CIRRUS_RELEASE == ""
+      environment:
+        GITHUB_TOKEN: ENCRYPTED[d033af6698c514188fb259d9dd1e8ad79d903f017b57543a5f34cfeead1eec1037fb411e53a408a3bdff9f6d175fda8b]
+      upload_script: ./.cirrus.upload.sh
+    - upload_script: true
 
-    higan-nightly_artifacts:
-        path: "higan-nightly.zip"
+  higan-nightly_artifacts:
+    path: "higan-nightly.zip"
