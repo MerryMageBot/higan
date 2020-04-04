@@ -1,14 +1,4 @@
-#!/usr/bin/env bash
-
-if [[ "$CIRRUS_RELEASE" == "" ]]; then
-  echo "Not a release. No need to deploy!"
-  exit 0
-fi
-
-if [[ "$GITHUB_TOKEN" == "" ]]; then
-  echo "Please provide GitHub access token via GITHUB_TOKEN environment variable!"
-  exit 1
-fi
+#!/usr/bin/env sh
 
 echo "Uploading..."
 name="higan-$CIRRUS_TAG-$CIRRUS_OS.zip"
